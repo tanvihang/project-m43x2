@@ -1,1 +1,1 @@
-M43x2MobileM43x2MobileimportM43x2MobileM43x2Mobile 'M43x2MobileM43x2MobileexpoM43x2MobileM43x2Mobile-M43x2MobileM43x2MobilerouterM43x2MobileM43x2Mobile/M43x2MobileM43x2MobileentryM43x2MobileM43x2Mobile';
+import 'expo-router/entry';
