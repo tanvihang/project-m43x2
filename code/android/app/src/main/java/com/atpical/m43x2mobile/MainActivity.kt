@@ -1,4 +1,4 @@
-package com.signsbeatmobile
+package com.atpical.m43x2mobile
 
 import android.os.Build
 import android.os.Bundle

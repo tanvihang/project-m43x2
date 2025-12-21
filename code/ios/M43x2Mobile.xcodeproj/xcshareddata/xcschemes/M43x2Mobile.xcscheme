@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "SignsbeatMobile.app"
-               BlueprintName = "SignsbeatMobile"
-               ReferencedContainer = "container:SignsbeatMobile.xcodeproj">
+               BuildableName = "M43x2Mobile.app"
+               BlueprintName = "M43x2Mobile"
+               ReferencedContainer = "container:M43x2Mobile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "SignsbeatMobileTests.xctest"
-               BlueprintName = "SignsbeatMobileTests"
-               ReferencedContainer = "container:SignsbeatMobile.xcodeproj">
+               BuildableName = "M43x2MobileTests.xctest"
+               BlueprintName = "M43x2MobileTests"
+               ReferencedContainer = "container:M43x2Mobile.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SignsbeatMobile.app"
-            BlueprintName = "SignsbeatMobile"
-            ReferencedContainer = "container:SignsbeatMobile.xcodeproj">
+            BuildableName = "M43x2Mobile.app"
+            BlueprintName = "M43x2Mobile"
+            ReferencedContainer = "container:M43x2Mobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SignsbeatMobile.app"
-            BlueprintName = "SignsbeatMobile"
-            ReferencedContainer = "container:SignsbeatMobile.xcodeproj">
+            BuildableName = "M43x2Mobile.app"
+            BlueprintName = "M43x2Mobile"
+            ReferencedContainer = "container:M43x2Mobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

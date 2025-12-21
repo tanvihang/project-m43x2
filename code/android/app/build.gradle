@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.signsbeatmobile"
+    namespace "com.atpical.m43x2mobile"
     defaultConfig {
-        applicationId "com.signsbeatmobile"
+        applicationId "com.atpical.m43x2mobile"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

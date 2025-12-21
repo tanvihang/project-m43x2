@@ -27,10 +27,10 @@ const getApiConfig = () => {
 export default {
   expo: {
     name: IS_DEV ? 'M43x2Mobile (DEV)' : IS_STAGING ? 'M43x2Mobile (STG)' : 'M43x2Mobile',
-    slug: 'SignsbeatMobile',
+    slug: 'M43x2Mobile',
     version: '1.0.0',
     plugins: ['expo-router'],
-    scheme: 'signsbeatmobile',
+    scheme: 'm43x2mobile',
     extra: {
       ...getApiConfig(),
       environment: IS_DEV ? 'development' : IS_STAGING ? 'staging' : 'production',

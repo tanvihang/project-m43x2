@@ -1,11 +1,15 @@
 {
   "expo": {
-    "name": "SignsbeatMobile",
-    "slug": "SignsbeatMobile",
+    "name": "M43x2Mobile",
+    "slug": "M43x2Mobile",
     "version": "1.0.0",
-    "plugins": [
-      "expo-router"
-    ],
-    "scheme": "signsbeatmobile"
+    "plugins": ["expo-router"],
+    "scheme": "m43x2mobile",
+    "ios": {
+      "bundleIdentifier": "com.atpical.m43x2mobile"
+    },
+    "android": {
+      "package": "com.atpical.m43x2mobile"
+    }
   }
 }

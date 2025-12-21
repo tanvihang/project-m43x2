@@ -1,4 +1,4 @@
-package com.signsbeatmobile
+package com.atpical.m43x2mobile
 
 import android.app.Application
 import android.content.res.Configuration
