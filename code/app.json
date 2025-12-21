@@ -4,12 +4,6 @@
     "slug": "M43x2Mobile",
     "version": "1.0.0",
     "plugins": ["expo-router"],
-    "scheme": "m43x2mobile",
-    "ios": {
-      "bundleIdentifier": "com.atpical.m43x2mobile"
-    },
-    "android": {
-      "package": "com.atpical.m43x2mobile"
-    }
+    "scheme": "m43x2mobile"
   }
 }
