@@ -1,20 +1,28 @@
-import { StyleSheet } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { useTheme } from "../../context/themeContext";
 import { ThemeType } from "../../types/others/themeType";
 import { FontSizes } from "../../constants/typography";
 import { SafeAreaView } from "react-native-safe-area-context";
-import WeatherComponent from "../../components/protected-components/home-components/WeatherComponent";
+import useImageMetaData from "../../hooks/screens-hook/protected-screen-hook/frame-screen-hook/useImageMetaData";
+import FrameImageRenderer from "../../components/protected-components/frame-components/FrameImageRenderer";
 import { scaleValues } from "../../constants";
 
-const HomeScreen = () => {
+const FrameScreen = () => {
   const { theme, fonts } = useTheme();
   const styles = createStyles(theme, fonts);
 
-  return (
+  const { exifData, imageUri, pickImage } = useImageMetaData();
 
+  return (
     <SafeAreaView style={styles.container}>
-      <WeatherComponent />
+        <FrameImageRenderer exifData={exifData} imageUri={imageUri}/>
+        <Button title="Select Your Proudest Image" onPress={pickImage} />
+
     </SafeAreaView>
   );
 };
@@ -27,8 +35,8 @@ const createStyles = (theme: ThemeType, fonts: FontSizes) => {
       flex: 1,
       paddingHorizontal: scaleValues.spacing.md
     },
+
   });
 };
 
-
-export default HomeScreen;
+export default FrameScreen;

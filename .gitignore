@@ -6,6 +6,9 @@ node_modules/
 # documents
 **/mvp/*
 
+# Config files
+app.config.js
+
 # Expo
 .expo/
 dist/
@@ -48,7 +51,11 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
+.app.config.js
+
+code/app.config.js
 
 # typescript
 *.tsbuildinfo

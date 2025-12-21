@@ -1,20 +1,18 @@
 import { StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
 import { useTheme } from "../../context/themeContext";
 import { ThemeType } from "../../types/others/themeType";
 import { FontSizes } from "../../constants/typography";
 import { SafeAreaView } from "react-native-safe-area-context";
-import WeatherComponent from "../../components/protected-components/home-components/WeatherComponent";
-import { scaleValues } from "../../constants";
 
-const HomeScreen = () => {
+const ComputeScreen = () => {
   const { theme, fonts } = useTheme();
   const styles = createStyles(theme, fonts);
 
   return (
-
     <SafeAreaView style={styles.container}>
-      <WeatherComponent />
+        <Text>Compute</Text>
     </SafeAreaView>
   );
 };
@@ -25,10 +23,8 @@ const createStyles = (theme: ThemeType, fonts: FontSizes) => {
     container: {
       backgroundColor: theme.backgroundColor,
       flex: 1,
-      paddingHorizontal: scaleValues.spacing.md
     },
   });
 };
 
-
-export default HomeScreen;
+export default ComputeScreen;

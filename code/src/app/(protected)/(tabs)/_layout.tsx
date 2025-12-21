@@ -19,29 +19,29 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="calendar"
+        name="frame"
         options={{
-          title: "Calendar",
+          title: "Frame",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calendar-outline" size={size} color={color} />
+            <Ionicons name="albums-outline" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="health"
+        name="recipe"
         options={{
-          title: "Health",
+          title: "Recipe",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart-outline" size={size} color={color} />
+            <Ionicons name="list-circle-outline" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="discover"
+        name="compute"
         options={{
-          title: "Discover",
+          title: "Compute",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="globe-outline" size={size} color={color} />
+            <Ionicons name="calculator-outline" size={size} color={color} />
           ),
         }}
       />

@@ -4,11 +4,8 @@ import Constants from 'expo-constants';
 const extra = Constants.expoConfig?.extra;
 
 export const API_CONFIG = {
-  GRAPH_QL_API: extra?.graphQLApi,
-  VITALZ_API: extra?.vitalzApi,
-  JC_RING_RAW_SERVICE_API: extra?.jcRingRawServiceApi,
-  USER_INSIGHTS_API: extra?.userInsightsApi,
-  INBODY_API: extra?.inbodyApi,
+  OPEN_WEATHER_MAP_API: extra?.openWeatherMapApi,
+  OPEN_WEATHER_MAP_API_KEY: extra?.openWeatherMapApiKey,
 } as const;
 
 export const ENVIRONMENT = extra?.environment || 'production';

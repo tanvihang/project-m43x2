@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'expo-router';
-import { useLoginApiMutation } from '../api-hook/graphql/useAuthApi';
 import { NormalizedError } from '../../utils/error';
 import { AuthMmkvStorage } from '../../storage/mmkv';
 import AuthFacade from '../../store/facades/auth-facade/authFacade';
@@ -26,14 +25,13 @@ const useSignIn = () => {
         mode: 'onBlur',
     });
 
-    const loginApiMutation = useLoginApiMutation();
+    // const loginApiMutation = useLoginApiMutation();
 
     const onSubmit = async (data: SignInInputs) => {
         try {
-            const response = await loginApiMutation.mutateAsync({
-                email: data.email,
-                password: data.password,
-            })
+            const response = {
+
+            };
             
             console.log('Login response:', response);
 

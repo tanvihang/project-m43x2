@@ -1,20 +1,14 @@
 import { Redirect } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { AuthMmkvStorage } from '../storage/mmkv';
 
 export default function Index() {
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Check if user is authenticated
     const checkAuth = () => {
-      try {
-        const token = AuthMmkvStorage.getAccessToken();
-        setIsAuthenticated(!!token);
-      } catch (error) {
-        setIsAuthenticated(false);
-      }
+
+      setIsAuthenticated(true);
     };
 
     checkAuth();
