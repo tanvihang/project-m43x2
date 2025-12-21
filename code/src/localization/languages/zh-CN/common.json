@@ -1,0 +1,9 @@
+{
+  "language": "Chinese Simplified",
+  "screens": {
+    "onBoarding": {
+      "signIn": "登入",  
+      "signUp": "注册"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "SignsbeatMobile",
+    "slug": "SignsbeatMobile",
+    "version": "1.0.0",
+    "plugins": [
+      "expo-router"
+    ],
+    "scheme": "signsbeatmobile"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "language": "English",
+  "screens": {
+    "onBoarding": {
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
+    }
+  }
+}
