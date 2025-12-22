@@ -9,7 +9,8 @@ const useWeatherComponent = () => {
 
     const getCurrentWeather = useGetCurrentWeather({
         lat: location?.coords.latitude,
-        lon: location?.coords.longitude
+        lon: location?.coords.longitude,
+        units: "metric"
     })
 
     useEffect(() => {

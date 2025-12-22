@@ -1,7 +1,7 @@
 import {
   Button,
-  StyleSheet,
   ScrollView,
+  StyleSheet,
 } from "react-native";
 import React from "react";
 import { useTheme } from "../../context/themeContext";
@@ -20,9 +20,10 @@ const FrameScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView>
         <FrameImageRenderer exifData={exifData} imageUri={imageUri}/>
         <Button title="Select Your Proudest Image" onPress={pickImage} />
-
+      </ScrollView>
     </SafeAreaView>
   );
 };

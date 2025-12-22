@@ -1,4 +1,4 @@
-import { LanguageSettingEnum, UserTypeEnum } from "../../enums";
+import { LanguageSettingEnum } from "../../enums";
 
 export type LoginParams = {
     email: string;
@@ -9,7 +9,6 @@ export type LoginResponse = {
     AccessToken: string;
     UserID: string;
     LoginEmail: string;
-    UserType: UserTypeEnum;
     VirtualCoach: boolean;
     TotalUnread: string;
     ResearcherEmail: string | null;

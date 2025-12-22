@@ -34,6 +34,9 @@ export default {
     plugins: [
       'expo-router',
     ],
+    experiments: {
+      typedRoutes: true
+    },
     scheme: 'm43x2mobile',
     ios: {
       "bundleIdentifier": "com.atpical.m43x2mobile",
