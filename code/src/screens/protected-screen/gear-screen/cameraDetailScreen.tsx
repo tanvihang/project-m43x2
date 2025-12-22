@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const GearScreen = () => {
+const CameraDetailScreen = () => {
   return (
     <View>
-      <Text>GearScreen</Text>
+      <Text>CameraDetailScreen</Text>
     </View>
   )
 }
 
-export default GearScreen
+export default CameraDetailScreen

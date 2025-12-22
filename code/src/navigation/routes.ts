@@ -15,11 +15,10 @@ export const Routes = {
 
     //* Protected
     home: '/(protected)/(tabs)/home',
-    calendar: '/(protected)/(tabs)/calendar',
-    health: '/(protected)/(tabs)/health',
-    discover: '/(protected)/(tabs)/discover',
-
-    settings: '/(protected)/settings',
+    frame: '/(protected)/(tabs)/frame',
+    gear: '/(protected)/(tabs)/gear',
+    recipe: '/(protected)/(tabs)/recipe',
+    compute: '/(protected)/(tabs)/compute',
 
     //* Common
     language: '/language',

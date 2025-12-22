@@ -1831,6 +1831,13 @@
   dependencies:
     nanoid "^3.3.11"
 
+"@shopify/flash-list@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@shopify/flash-list/-/flash-list-2.0.2.tgz#644748f883fccf8cf2e0ca251e0ef88673b89120"
+  integrity sha512-zhlrhA9eiuEzja4wxVvotgXHtqd3qsYbXkQ3rsBfOgbFA9BVeErpDE/yEwtlIviRGEqpuFj/oU5owD6ByaNX+w==
+  dependencies:
+    tslib "2.8.1"
+
 "@shopify/react-native-skia@^2.4.14":
   version "2.4.14"
   resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-2.4.14.tgz#565db4532efe11ed808643328cfbac3a49eb41de"
@@ -5997,11 +6004,6 @@ react-native-bluetooth-state-manager@^2.0.4:
   resolved "https://registry.yarnpkg.com/react-native-bluetooth-state-manager/-/react-native-bluetooth-state-manager-2.0.4.tgz#b356988dd735314a4b291251551a9dc91a675821"
   integrity sha512-v7fmFXoEoRM8v9AjMD56m4k07+vHzF2ada2tSQroDOt3XyHnXyFCIO91wzkH9+RgSvx74oLhfTvqPLt4jtv59w==
 
-react-native-exif@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/react-native-exif/-/react-native-exif-0.5.0.tgz#9cf6c643cf903bda0637e2ea8a735acdcd2a1616"
-  integrity sha512-nt8JY1QhM3EE86Wk+IusJ8J37c3ecdRETlF5g/SFKmAt3E+vnQmWwWyuLNtJux/f1zBJXhQ9Dvb43BYfu8w2yQ==
-
 react-native-is-edge-to-edge@1.2.1, react-native-is-edge-to-edge@^1.1.6, react-native-is-edge-to-edge@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.2.1.tgz#64e10851abd9d176cbf2b40562f751622bde3358"
@@ -6990,15 +6992,15 @@ ts-interface-checker@^0.1.9:
   resolved "https://registry.yarnpkg.com/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz#784fd3d679722bc103b1b4b8030bcddb5db2a699"
   integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
 
+tslib@2.8.1, tslib@^2.0.0, tslib@^2.1.0:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
+  integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
+
 tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.0.0, tslib@^2.1.0:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
-  integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
 tsutils@^3.21.0:
   version "3.21.0"

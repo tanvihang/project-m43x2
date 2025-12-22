@@ -1,7 +1,6 @@
 import { View, Text, Alert } from 'react-native'
 import React, { useState } from 'react'
 import * as ImagePicker from "expo-image-picker";
-import Exif from 'react-native-exif'
 
 const useImageMetaData = () => {
 
@@ -25,21 +24,16 @@ const useImageMetaData = () => {
             allowsEditing: true,
             aspect: [4, 3],
             quality: 1,
+            exif: true,
         });
 
         if (!result.canceled && result.assets && result.assets.length > 0) {
             const selectedImage = result.assets[0];
             setImageUri(selectedImage.uri);
 
-            Exif.getExif(selectedImage.uri)
-                .then((exifData) => {
-                    console.log('EXIF data:', exifData);
-                    setExifData(exifData);
-                })
-                .catch((error) => {
-                    console.log('Error reading EXIF data:', error);
-                    setExifData({ error: 'Failed to read EXIF data' });
-                });
+            const exif = selectedImage.exif;
+            setExifData(exif);
+
         }
     };
 
