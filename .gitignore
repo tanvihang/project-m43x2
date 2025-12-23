@@ -4,7 +4,7 @@
 node_modules/
 
 # documents
-**/mvp/*
+**/base-structure/*
 
 # Config files
 app.config.js
