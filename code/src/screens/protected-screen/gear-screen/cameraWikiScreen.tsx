@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlashList } from "@shopify/flash-list";
 import { OLYMPUS_CAMERAS } from '../../../data';
 import { CameraType } from '../../../types/models';
