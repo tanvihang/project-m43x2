@@ -1,1 +1,1 @@
-export * from './olympus'
+export * from './olympusCamera'

@@ -19,7 +19,7 @@ export type CameraType = {
         LiveComposite: boolean;
     };
     VisualAssets: {
-        Sketch: any; // 引用图片资源
+        Sketch: string[]; // 引用图片资源
         PrimaryColor: string;
     };
     ExifIdentifiers: string[];
