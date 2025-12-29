@@ -1,11 +1,26 @@
-import { AutofocusTypeEnum, CameraBrandEnum, OlympusCameraSeriesEnum, SensorTypeEnum, UsbTypeEnum, VideoBitDepthEnum, WeatherProofRatingEnum } from "../../enums";
+import { AutofocusTypeEnum, CameraBrandEnum, GearCategoryEnum, OlympusCameraSeriesEnum, SensorTypeEnum, UsbTypeEnum, VideoBitDepthEnum, WeatherProofRatingEnum } from "../../enums";
 
-export type CameraType = {
+type BaseGearType = {
     Id: string;
     Brand: CameraBrandEnum;
-    Series: OlympusCameraSeriesEnum;
+    Category: GearCategoryEnum;
     ModelName: string;
-    DisplayName: string
+    DisplayName: string;
+    VisualAssets: {
+        Sketch: string[]; // 引用图片资源
+        PrimaryColor: string;
+    },
+    ExifIdentifiers: string[];
+    Lore: {
+        Nickname: string;
+        Description: string;
+    }
+}
+
+export type CameraType = BaseGearType & {
+    Category: GearCategoryEnum.CAMERA;
+    // Additional camera-specific properties can be added here
+    Series: OlympusCameraSeriesEnum;
     CoreSpecs: {
         Sensor: {
             CropFactor: number;
@@ -17,15 +32,6 @@ export type CameraType = {
     ComputationalFeatures: {
         LiveNd: boolean;
         LiveComposite: boolean;
-    };
-    VisualAssets: {
-        Sketch: string[]; // 引用图片资源
-        PrimaryColor: string;
-    };
-    ExifIdentifiers: string[];
-    Lore: {
-        Nickname: string;
-        Description: string;
     };
     AdvancedSpecs?: {
         Video: {
@@ -48,4 +54,9 @@ export type CameraType = {
             ChargingSupported: boolean;
         };
     };
+}
+
+export type LensType = BaseGearType & {
+    Category: GearCategoryEnum.LENS;
+    // Additional lens-specific properties can be added here
 }

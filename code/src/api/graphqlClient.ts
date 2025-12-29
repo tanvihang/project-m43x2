@@ -1,7 +1,6 @@
 
 import { ClientError, GraphQLClient } from "graphql-request";
 import { GraphQLError } from "graphql";
-import { refreshTokenApi } from "../api/vitalz/token";
 import { AuthMmkvStorage } from "../storage/mmkv";
 import { API_CONFIG } from "../config";
 import { ErrorService } from "../utils/error";
@@ -34,36 +33,7 @@ export const graphQLClient = new GraphQLClient(
     }
 )
 
-let refreshPromise: Promise<string> | null = null;
 
-const refreshAccessToken = async(): Promise<string> => {
-    if (refreshPromise) {
-        return refreshPromise;
-    }
-
-    refreshPromise = (async () => {
-        try{
-            const currentToken = AuthMmkvStorage.getAccessToken()
-            if(!currentToken){
-                throw new Error("No access token found");
-            }
-
-            const newAccessToken = await refreshTokenApi(currentToken);
-
-            AuthMmkvStorage.setAccessToken(newAccessToken);
-            
-            return newAccessToken;
-        } catch(error){
-            AuthMmkvStorage.clearAuth();
-            
-            throw error;
-        } finally {
-            refreshPromise = null;
-        }
-    })();
-
-    return refreshPromise;
-}
 
 /**
  * Unified GraphQL client that automatically handles authentication
@@ -115,37 +85,6 @@ export const graphQLRequestWithNormalizedError = async <T = unknown>(
             hasAuthError || error.response?.status === 401
         );
 
-        if (isAuthError && token) {
-            try {
-                if (__DEV__) {
-                    console.log("Attempting to refresh token...");
-                }
-                
-                // Try to refresh token
-                const newToken = await refreshAccessToken();
-                
-                if (__DEV__) {
-                    console.log("Token refreshed successfully, retrying request...");
-                }
-                
-                // Retry request with new token
-                return await makeRequest(newToken);
-            } catch (refreshError) {
-                if (__DEV__) {
-                    console.error('Token refresh failed:', refreshError);
-                }
-                AuthMmkvStorage.clearAuth();
-                
-                // Normalize refresh error before throwing
-                const refreshNormalizedError = ErrorService.handleGraphQLError(
-                    refreshError,
-                    'TokenRefresh',
-                    undefined,
-                    { logToConsole: true, logToRemote: true }
-                );
-                throw refreshNormalizedError;
-            }
-        }
 
         // If auth error but no token, clear auth just in case
         if (isAuthError && !token) {

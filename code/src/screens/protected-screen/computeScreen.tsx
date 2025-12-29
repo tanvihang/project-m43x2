@@ -5,6 +5,7 @@ import { useTheme } from "../../context/themeContext";
 import { ThemeType } from "../../types/others/themeType";
 import { FontSizes } from "../../constants/typography";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { scaleValues } from "../../constants";
 
 const ComputeScreen = () => {
   const { theme, fonts } = useTheme();
@@ -23,6 +24,8 @@ const createStyles = (theme: ThemeType, fonts: FontSizes) => {
     container: {
       backgroundColor: theme.backgroundColor,
       flex: 1,
+      paddingHorizontal: scaleValues.spacing.md,
+      paddingVertical: scaleValues.spacing.sm,
     },
   });
 };

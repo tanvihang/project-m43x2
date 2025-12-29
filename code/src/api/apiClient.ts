@@ -1,7 +1,6 @@
 import axios, { isAxiosError, type InternalAxiosRequestConfig } from 'axios';
 import { AuthMmkvStorage } from '../storage/mmkv';
-import { refreshTokenApi } from './vitalz/token';
-import { ErrorService, ErrorSource } from '../utils/error';
+import { ErrorService } from '../utils/error';
 
 // Extend the AxiosRequestConfig to include retry count
 interface ExtendedAxiosRequestConfig extends InternalAxiosRequestConfig {
@@ -68,35 +67,6 @@ apiClient.interceptors.response.use(
         throw normalizedError;
       }
 
-      try {
-        const accessToken = AuthMmkvStorage.getAccessToken();
-
-        if(!accessToken){
-            throw normalizedError;
-        }
-        
-        const newToken = await refreshTokenApi(accessToken);
-        if (!newToken) {
-          throw normalizedError;
-        }
-
-        // 更新请求头，重试原请求
-        originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
-        return apiClient(originalRequest);
-      } catch (error_) {
-        await logOutUser();
-        // If refresh failed, throw the refresh error normalized
-        const refreshNormalizedError = ErrorService.handleError(
-          error_,
-          {
-            source: ErrorSource.REST,
-            endpoint: originalRequest.url,
-            method: originalRequest.method,
-          },
-          { logToConsole: true, logToRemote: true }
-        );
-        throw refreshNormalizedError;
-      }
     }
 
     // Throw normalized error instead of original

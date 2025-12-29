@@ -1,18 +1,19 @@
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import CtaButton from "../../../components/ui/button/CtaButton";
 import { router } from "expo-router";
+import { Routes } from "../../../navigation/routes";
+import { View } from "react-native";
 
 const GearIndexScreen = () => {
   return (
-    <SafeAreaView>
+    <View>
       <CtaButton
         title="Add Gear"
         onPress={() => {
-          router.push('/(protected)/(tabs)/gear/cameraWiki')
+          router.push(Routes.gearWiki)
         }}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -5,13 +5,15 @@ import {
     VideoBitDepthEnum, 
     AutofocusTypeEnum, 
     WeatherProofRatingEnum, 
-    UsbTypeEnum 
-} from "../../types/enums";
-import { CameraType } from "../../types/models";
+    UsbTypeEnum, 
+    GearCategoryEnum
+} from "../../../types/enums";
+import { CameraType } from "../../../types/models/gear-wiki/gearType";
 
 export const OLYMPUS_CAMERAS: CameraType[] = [
     // --- PEN-F: The Legend ---
     {
+        Category: GearCategoryEnum.CAMERA,
         Id: 'oly-pen-f',
         Brand: CameraBrandEnum.OLYMPUS,
         Series: OlympusCameraSeriesEnum.PEN,
@@ -63,6 +65,7 @@ export const OLYMPUS_CAMERAS: CameraType[] = [
 
     // --- E-P7: The Modern Classic ---
     {
+        Category: GearCategoryEnum.CAMERA,
         Id: 'oly-e-p7',
         Brand: CameraBrandEnum.OLYMPUS,
         Series: OlympusCameraSeriesEnum.PEN,
@@ -114,6 +117,7 @@ export const OLYMPUS_CAMERAS: CameraType[] = [
 
     // --- E-PL10: The Popular Choice ---
     {
+        Category: GearCategoryEnum.CAMERA,
         Id: 'oly-e-pl10',
         Brand: CameraBrandEnum.OLYMPUS,
         Series: OlympusCameraSeriesEnum.PEN,

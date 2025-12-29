@@ -4,7 +4,12 @@ export default function GearLayout() {
   return (
     <Stack>
       <Stack.Screen name="index" />
-      <Stack.Screen name="cameraWiki" />
+      <Stack.Screen name="gearWiki"/>
+      <Stack.Screen name="detail/[id]"
+        options={{
+          presentation: 'modal'
+        }}
+      />
     </Stack>
   );
 }

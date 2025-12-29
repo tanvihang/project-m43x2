@@ -1,6 +1,7 @@
-import { Redirect, Slot } from 'expo-router';
-import { useEffect, useState } from 'react';
-
+import { Redirect } from "expo-router";
+import { Drawer } from "expo-router/drawer";
+import { useEffect, useState } from "react";
+import { Routes } from "../../navigation/routes";
 
 export default function ProtectedLayout() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -22,9 +23,28 @@ export default function ProtectedLayout() {
 
   if (!isAuthenticated) {
     // Redirect to sign-in if not authenticated
-    return <Redirect href="/(auth)/signIn" />;
+    return <Redirect href={Routes.signIn} />;
   }
 
   // User is authenticated, render the protected content
-  return <Slot />;
+  return (<Drawer
+    screenOptions={{
+      headerShown: false
+    }}
+  >
+    <Drawer.Screen
+      name="(tabs)"
+      options={{
+        drawerLabel: "Home",
+        title: "Main"
+      }}
+    />
+    <Drawer.Screen
+      name="settings"
+      options={{
+        drawerLabel: "Settings",
+        title: "Settings"
+      }}
+    />
+  </Drawer>);
 }

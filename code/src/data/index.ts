@@ -1,1 +1,1 @@
-export * from './camera-wiki'
+export * from './gear-wiki/camera-wiki'

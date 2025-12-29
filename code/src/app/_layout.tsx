@@ -8,10 +8,65 @@ import { useSyncQueriesExternal } from "react-query-external-sync";
 import Toast from 'react-native-toast-message';
 import { storage } from "../storage/mmkv/mmkvInstance";
 import ThemeProvider from "../context/themeContext";
-import { useGlobalErrorHandler } from "../hooks/useGlobalErrorHandler";
+import { NormalizedError } from "../utils/error";
 
 const queryClient = new QueryClient({
-  defaultOptions: {},
+  defaultOptions: {
+    mutations: {
+      // Global error handler for all mutations
+      onError: (error: unknown) => {
+        const normalizedError = error as NormalizedError;
+
+        console.log("Global Mutation Error Handler:", normalizedError);
+
+        //* Toast for 401 & 403 errors
+        if (
+          normalizedError.statusCode === 401 ||
+          normalizedError.statusCode === 403
+        ) {
+          Toast.show({
+            type: "error",
+            text1: "Session Expired",
+            text2: "Please log in again.",
+            position: "top",
+            visibilityTime: 4000,
+          });
+        }
+
+        //* Toast for 500++ errors
+        if (normalizedError.statusCode >= 500) {
+          let title;
+
+          switch (normalizedError.statusCode) {
+            case 500:
+              title = "Internal Server Error";
+              break;
+            case 502:
+              title = "Bad Gateway";
+              break;
+            case 503:
+              title = "Service Unavailable";
+              break;
+            case 504:
+              title = "Gateway Timeout";
+              break;
+            default:
+              title = "Server Error";
+          }
+
+          Toast.show({
+            type: "error",
+            text1: title,
+            text2: normalizedError.message,
+            position: "top",
+            visibilityTime: 4000,
+          });
+        }
+      },
+      // Mutations typically shouldn't auto-retry
+      retry: false,
+    },
+  },
 });
 
 const RootLayout = () => {
@@ -26,8 +81,6 @@ const RootLayout = () => {
 };
 
 function AppContent() {
-  //* Setup global error handler - handles all API errors automatically
-  useGlobalErrorHandler();
 
   //* External Sync for React Native DevTools
   useSyncQueriesExternal({

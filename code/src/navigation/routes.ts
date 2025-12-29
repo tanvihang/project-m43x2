@@ -1,4 +1,5 @@
 import type { Href } from "expo-router";
+import { GearCategoryEnum } from "../types/enums";
 
 export const Routes = {
     //* Auth
@@ -20,8 +21,27 @@ export const Routes = {
     recipe: '/(protected)/(tabs)/recipe',
     compute: '/(protected)/(tabs)/compute',
 
+    setting: '/(protected)/settings',
+    developerPlayground: '/(protected)/settings/developer-playground',
+    errorPlayground: '/(protected)/settings/developer-playground/errorPlayground',
+
+    //* Gear
+    gearWiki: '/(protected)/(tabs)/gear/gearWiki',
+    gearDetail: '/(protected)/(tabs)/gear/detail/[id]',
+    gearItemWiki: '/(protected)/(tabs)/gear/[itemWiki]',
+
     //* Common
     language: '/language',
     fontSize: '/fontSize',
 
 } satisfies Record<string, Href>;
+
+export type M43x2RouteParams = {
+    gearDetail: {
+        id: string;
+        category: GearCategoryEnum;
+    },
+    gearItemWiki: {
+        itemWiki: GearCategoryEnum;
+    }
+}

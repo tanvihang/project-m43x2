@@ -1919,6 +1919,28 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - RNGestureHandler (2.28.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - RNPermissions (5.4.4):
     - hermes-engine
     - RCTRequired
@@ -1941,7 +1963,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNReanimated (4.2.1):
+  - RNReanimated (4.1.6):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1963,10 +1985,10 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-    - RNReanimated/reanimated (= 4.2.1)
+    - RNReanimated/reanimated (= 4.1.6)
     - RNWorklets
     - Yoga
-  - RNReanimated/reanimated (4.2.1):
+  - RNReanimated/reanimated (4.1.6):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1988,10 +2010,10 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-    - RNReanimated/reanimated/apple (= 4.2.1)
+    - RNReanimated/reanimated/apple (= 4.1.6)
     - RNWorklets
     - Yoga
-  - RNReanimated/reanimated/apple (4.2.1):
+  - RNReanimated/reanimated/apple (4.1.6):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2062,7 +2084,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNWorklets (0.7.1):
+  - RNWorklets (0.5.1):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2084,9 +2106,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-    - RNWorklets/worklets (= 0.7.1)
+    - RNWorklets/worklets (= 0.5.1)
     - Yoga
-  - RNWorklets/worklets (0.7.1):
+  - RNWorklets/worklets (0.5.1):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2108,9 +2130,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-    - RNWorklets/worklets/apple (= 0.7.1)
+    - RNWorklets/worklets/apple (= 0.5.1)
     - Yoga
-  - RNWorklets/worklets/apple (0.7.1):
+  - RNWorklets/worklets/apple (0.5.1):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2236,6 +2258,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeDependencies (from `../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`)
   - RNBleManager (from `../node_modules/react-native-ble-manager`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -2431,6 +2454,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec"
   RNBleManager:
     :path: "../node_modules/react-native-ble-manager"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -2535,10 +2560,11 @@ SPEC CHECKSUMS:
   ReactCommon: e6e232202a447d353e5531f2be82f50f47cbaa9a
   ReactNativeDependencies: 71ce9c28beb282aa720ea7b46980fff9669f428a
   RNBleManager: e30c44d63d3b5ceab84c3adf616f2eafe1c00e89
+  RNGestureHandler: 6a488ce85c88e82d8610db1108daf04e9b2d5162
   RNPermissions: 0f534e5ffc883b83ba3c3cbe603481854e21130f
-  RNReanimated: 20bccac1c66a565ff1275a8a4769cb7098729356
+  RNReanimated: 43f611f1c85c90e0273df7399bf1536f8e2bd125
   RNScreens: dd61bc3a3e6f6901ad833efa411917d44827cf51
-  RNWorklets: e2b9423934700160135e216d8a2e6cb7b194846c
+  RNWorklets: 28ee7370ca8da356fcc914e3e68b97e9752196d2
   SDWebImage: e9c98383c7572d713c1a0d7dd2783b10599b9838
   SDWebImageAVIFCoder: afe194a084e851f70228e4be35ef651df0fc5c57
   SDWebImageSVGCoder: 15a300a97ec1c8ac958f009c02220ac0402e936c
