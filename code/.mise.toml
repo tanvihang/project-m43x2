@@ -1,0 +1,4 @@
+[tools]
+node = "20.19.5"
+java = "openjdk-17"  # 确保 Android 打包环境一致
+ruby = "3.2.2"       # 确保 iOS CocoaPods 环境一致
