@@ -5,10 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import * as ExpoDevice from "expo-device";
 import { useSyncQueriesExternal } from "react-query-external-sync";
-import Toast from 'react-native-toast-message';
+import Toast from "react-native-toast-message";
 import { storage } from "../storage/mmkv/mmkvInstance";
 import ThemeProvider from "../context/themeContext";
 import { NormalizedError } from "../utils/error";
+import * as Sentry from "@sentry/react-native";
+import { API_CONFIG } from "../config";
+import ErrorBoundary from "../components/common/ErrorBoundary";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,6 +27,7 @@ const queryClient = new QueryClient({
           normalizedError.statusCode === 401 ||
           normalizedError.statusCode === 403
         ) {
+          Sentry.captureException(normalizedError);
           Toast.show({
             type: "error",
             text1: "Session Expired",
@@ -36,6 +40,7 @@ const queryClient = new QueryClient({
         //* Toast for 500++ errors
         if (normalizedError.statusCode >= 500) {
           let title;
+          Sentry.captureException(normalizedError);
 
           switch (normalizedError.statusCode) {
             case 500:
@@ -69,19 +74,42 @@ const queryClient = new QueryClient({
   },
 });
 
+Sentry.init({
+  dsn: API_CONFIG.SENTRY_SDN,
+
+  // Adds more context data to events (IP address, cookies, user, etc.)
+  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
+  sendDefaultPii: true,
+
+  // Enable Logs
+  enableLogs: true,
+
+  // Configure Session Replay
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1,
+  integrations: [
+    Sentry.mobileReplayIntegration(),
+    Sentry.feedbackIntegration(),
+  ],
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
+
 const RootLayout = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <AppContent />
-        <Toast />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <AppContent />
+          <Toast />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 };
 
 function AppContent() {
-
   //* External Sync for React Native DevTools
   useSyncQueriesExternal({
     queryClient,
@@ -114,7 +142,7 @@ function AppContent() {
   });
 
   return (
-    <Stack screenOptions={{headerShown:false}}>
+    <Stack screenOptions={{ headerShown: false }}>
       {/* Initial redirect */}
       <Stack.Screen name="index" />
 
@@ -127,4 +155,4 @@ function AppContent() {
   );
 }
 
-export default RootLayout;
+export default Sentry.wrap(RootLayout);

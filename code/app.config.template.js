@@ -7,6 +7,7 @@ const IS_STAGING = process.env.APP_VARIANT === 'staging';
 const getApiConfig = () => {
   if (IS_DEV) {
     return {
+      sentrySdn: 'PLACE_HOLDER_SENTRY_DSN',
       openWeatherMapApi: 'PLACE_HOLDER_API_URL',
       openWeatherMapApiKey: 'PLACE_HOLDER_API_KEY'
     };
@@ -14,6 +15,7 @@ const getApiConfig = () => {
   
   if (IS_STAGING) {
     return {
+      sentrySdn: 'PLACE_HOLDER_SENTRY_DSN',
       openWeatherMapApi: 'PLACE_HOLDER_API_URL',
       openWeatherMapApiKey: 'PLACE_HOLDER_API_KEY'
     };
@@ -21,6 +23,7 @@ const getApiConfig = () => {
   
   // Production
   return {
+      sentrySdn: 'PLACE_HOLDER_SENTRY_DSN',
       openWeatherMapApi: 'PLACE_HOLDER_API_URL',
       openWeatherMapApiKey: 'PLACE_HOLDER_API_KEY'
   };

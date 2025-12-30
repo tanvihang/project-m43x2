@@ -9,13 +9,13 @@ This document outlines the development phases of the **m43x2** mobile app. Our m
 * [x] **Camera Wiki**: Implement the `CameraWikiScreen` using `FlashList`.
 * [x] **EXIF Engine**: Build a utility to parse image metadata (ISO, Focal Length, Aperture).
 * [x] **Smart Border (V1)**: A basic canvas to add a white border with text (Model Name & 2x focal length).
-* [ ] **Asset Library**: Initial set of hand-drawn icons for PEN and OM-D series.
+* [x] **Asset Library**: Initial set of hand-drawn icons for PEN and OM-D series.
 
 ## 🟡 Phase 2: User Experience (The Polish)
 
 *Focus: Making the app "smart" and personal.*
 
-* [ ] **The Backpack**: Persistent storage (Zustand + AsyncStorage) for "My Cameras".
+* [ ] **The Backpack**: Persistent storage (Zustand + Realm) for "My Cameras".
 * [ ] **Auto-Match Logic**: Automatically link imported photos to the Wiki database via EXIF tags.
 * [ ] **Dynamic UI**: UI themes that change colors based on the camera's `PrimaryColor`.
 * [ ] **Enhanced Wiki**: Detailed "Wikipedia-style" views for each camera with `AdvancedSpecs`.
@@ -36,7 +36,7 @@ This document outlines the development phases of the **m43x2** mobile app. Our m
 
 * [ ] **Recipe Export**: Export color recipes as beautiful, shareable cards.
 * [ ] **Community Contributions**: Standardized PR process for users to add their own camera Wiki entries.
-* [ ] **Localization**: English, Chinese, and Japanese support.
+* [x] **Localization**: English, Chinese, and Japanese support.
 
 ---
 

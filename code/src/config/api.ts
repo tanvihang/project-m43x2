@@ -4,6 +4,7 @@ import Constants from 'expo-constants';
 const extra = Constants.expoConfig?.extra;
 
 export const API_CONFIG = {
+  SENTRY_SDN: extra?.sentrySdn,
   OPEN_WEATHER_MAP_API: extra?.openWeatherMapApi,
   OPEN_WEATHER_MAP_API_KEY: extra?.openWeatherMapApiKey,
 } as const;

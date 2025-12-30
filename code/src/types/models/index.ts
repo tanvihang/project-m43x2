@@ -1,1 +1,2 @@
-export * from './camera-wiki/cameraType'
+export * from './gear-wiki/gearType'
+export * from './recipe/recipeType'

@@ -6,6 +6,9 @@ node_modules/
 # documents
 **/base-structure/*
 
+# Sentry
+sentry.properties
+
 # Config files
 app.config.js
 

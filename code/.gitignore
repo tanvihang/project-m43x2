@@ -36,3 +36,5 @@ app.config.js
 
 # typescript
 *.tsbuildinfo
+
+.env.local
